@@ -1,0 +1,90 @@
+import turtle
+t=turtle.Turtle()
+s=turtle.Screen()
+s.bgcolor("light blue")
+#function to draw a square
+def Square(size,colour):
+  t.fillcolor(colour)
+  t.begin_fill()
+  for i in range(4):
+    t.forward(size)
+    t.left(90)
+  t.end_fill()
+
+#triangle function
+def Triangle(size,colour):
+  t.fillcolor(colour)
+  t.begin_fill()
+  for i in range(3):
+    t.forward(size)
+    t.left(120)
+  t.end_fill()
+
+
+#Rectangle Function
+def Door(size1,size2,colour):
+  t.fillcolor(colour)
+  t.begin_fill()
+  for i in range(2):
+    t.forward(size1)
+    t.left(90)
+    t.forward(size2)
+    t.left(90)
+  t.end_fill()
+
+
+#Go to place Function
+def GTP(x,y):
+  t.penup()
+  t.goto(x,y)
+  t.pendown()
+
+
+#Plus partner split Windows
+def Window(size):
+  Square(size, "sky blue")
+  t.forward(size/2)
+  t.left(90)
+  t.forward(size)
+  t.backward(size/2)
+  t.left(90)
+  t.forward(size/2)
+  t.left(180)
+  t.forward(size)
+
+
+Square(80,"yellow")
+GTP(60,40)
+Window(20)
+GTP(40,0)
+t.left(90)
+Door(40,25,"blue")
+GTP(0,80)
+t.right(90)
+Triangle(80,"green")
+
+GTP(100,0)
+#House 2
+Square(80,"light green")
+GTP(100,80)
+Triangle(80,"Purple")
+GTP(160,40)
+Window(20)
+GTP(140,0)
+Door(25,40,"yellow")
+
+#tree
+GTP(255,0)
+Door(30,45,"brown")
+GTP(250,45)
+Triangle(40,"green")
+GTP(250,65)
+Triangle(40,"green")
+
+#grass
+GTP(-100,0)
+for i in range(20):
+  Triangle(20,"green")
+  t.forward(20)
+  
+s.mainloop()
